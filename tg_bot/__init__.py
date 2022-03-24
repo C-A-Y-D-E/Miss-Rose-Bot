@@ -47,8 +47,9 @@ if ENV:
     URL = os.environ.get('URL', "")  # Does not contain token
     PORT = int(os.environ.get('PORT', 5000))
     CERT_PATH = os.environ.get("CERT_PATH")
-
-    DB_URI = os.environ.get('DATABASE_URL').replace("postgres://", "postgresql://", 1)
+    uri = os.environ.get('DATABASE_URL')
+    print(uri)
+    DB_URI = uri.replace("postgres://", "postgresql://")
     print(DB_URI)
     DONATION_LINK = os.environ.get('DONATION_LINK')
     LOAD = os.environ.get("LOAD", "").split()
